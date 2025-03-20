@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love or Fear?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2 id="message">If you love me, click me ❤️</h2>
+        <img id="mainImage" src="girl.jpg" alt="Girl Image" class="image">
+        
+        <!-- Joker Laugh Sound -->
+        <audio id="jokerLaugh">
+            <source src="joker-laugh.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script>
+        document.getElementById("mainImage").addEventListener("click", function() {
+            let image = document.getElementById("mainImage");
+            let message = document.getElementById("message");
+            let audio = document.getElementById("jokerLaugh");
+
+            // Play Joker's laugh
+            audio.play();
+
+            // Change text to warning
+            message.innerText = "TOO LATE! HE'S COMING FOR YOU! 😈";
+
+            // Glitch Effect (Image Shaking)
+            image.classList.add("glitch");
+
+            // Slowly fade into Joker
+            setTimeout(() => {
+                image.src = "joker.jpg";
+                image.classList.remove("glitch");
+                image.classList.add("fade-in");
+            }, 2500);
+        });
+    </script>
+</body>
+</html>

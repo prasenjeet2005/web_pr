@@ -1,0 +1,51 @@
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h2 {
+    font-size: 24px;
+    color: red;
+    transition: 0.5s;
+}
+
+.image {
+    width: 300px;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+}
+
+.image:hover {
+    transform: scale(1.1);
+}
+
+/* Glitch Effect */
+@keyframes glitch {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-5px, 5px); }
+    40% { transform: translate(5px, -5px); }
+    60% { transform: translate(-5px, 5px); }
+    80% { transform: translate(5px, -5px); }
+    100% { transform: translate(0, 0); }
+}
+
+.glitch {
+    animation: glitch 0.1s infinite;
+}
+
+/* Fade-in Effect */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(1.2); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.fade-in {
+    animation: fadeIn 3s ease-in-out forwards;
+}
